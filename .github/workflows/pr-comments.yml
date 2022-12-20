@@ -7,7 +7,11 @@ jobs:
     name: Read PR Comments
     runs-on: ubuntu-latest
     steps:
+    - name: install octokit -v 4.15.0
     - run: gem install octokit -v 4.15.0 --user-install
     - uses: actions/checkout@v3
     - run: ruby -r ./.github/workflows/octokit.rb
-    - run: ruby -r ./.github/workflows/datetime.rb
+    - name: Set current date as env variable1
+    - run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+    - name: Echo current date
+    - run: echo $NOW # Gives "2022-12-11T01:42:20"
