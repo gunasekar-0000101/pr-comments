@@ -4,7 +4,7 @@ require 'octokit'
 # Instead, set and test environment variables, like below
 client = Octokit::Client.new :access_token => ENV['MY_PERSONAL_TOKEN']
 
-client.issue_comments("gunasekar-0000101/pr-comments", 1).each do |comment|
+client.issue_comments("gunasekar-0000101/pr-comments", 2).each do |comment|
   username = comment[:user][:login]
   post_date = comment[:created_at]
   content = comment[:body]
