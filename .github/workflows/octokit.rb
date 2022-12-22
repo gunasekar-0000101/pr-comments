@@ -9,7 +9,7 @@ client.issue_comments("gunasekar-0000101/pr-comments", 2).each do |comment|
   post_date = comment[:created_at]
   content = comment[:body]
   #puts "#{username} made a comment on #{post_date}. It says:\n'#{content}'\n"
-  puts comment.include?(lookingfor)?
+  puts content.include?(lookingfor)?
   "#{lookingfor} is present in the comment" :
   "#{lookingfor} is not present in the comment"
 end
