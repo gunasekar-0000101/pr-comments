@@ -13,7 +13,7 @@
 
 #exit
 
-if grep -Fxq "build now" rubyout.log
+if grep -Fxq "2022-12-22 build now is present in the comment" rubyout.log
 then
     # code if found
     echo "found"
