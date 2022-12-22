@@ -21,4 +21,4 @@ else
     # code if not found
     echo "not found"
 fi
-#cat rubyout.log
+cat rubyout.log
