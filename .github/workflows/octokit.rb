@@ -15,5 +15,5 @@ client.issue_comments("gunasekar-0000101/pr-comments", 2).each do |comment|
   puts content.include?(lookingfor)?
   "#{lookingfor} is present in the comment" :
   "#{lookingfor} is not present in the comment"
-  puts "#{utctime}"
 end
+puts "#{utctime}"
