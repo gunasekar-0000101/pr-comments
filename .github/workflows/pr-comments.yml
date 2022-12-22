@@ -9,7 +9,8 @@ jobs:
     steps:
     - run: gem install octokit -v 4.15.0 --user-install
     - uses: actions/checkout@v3
-    - run: ruby -r ./.github/workflows/octokit.rb 2 > rubyout.log
+    - run: echo "PRNUM=2" >> $GITHUB_ENV
+    - run: ruby -r ./.github/workflows/octokit.rb $PRNUM > rubyout.log
     - run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
     - run: echo $NOW # Gives "2022-12-11T01:42:20"
     - run: echo "do something"
