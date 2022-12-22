@@ -13,7 +13,9 @@
 
 #exit
 
-if grep -Fxq "build now" rubyout.log
+#if grep -Fxq "build now" rubyout.log
+cat rubyout.log
+if grep "build now" rubyout.log
 then
     # code if found
     echo "found"
@@ -21,4 +23,3 @@ else
     # code if not found
     echo "not found"
 fi
-cat rubyout.log
