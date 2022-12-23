@@ -22,9 +22,12 @@ utctime = Time.now.utc
 #printing a new line
 #print "\n"
 #File.open('/home/runner/work/pr-comments/pr-comments/pull_number.log', r)
-fileObject = File.open("pull_number.log","r");
-puts(fileObject.sysread(10));
-fileObject.close();
+#fileObject = File.open("pull_number.log","r");
+#puts(fileObject.sysread(10));
+#fileObject.close();
+v1 = ARGV[0]
+puts v1
+ 
 
 client.issue_comments("gunasekar-0000101/pr-comments", 2).each do |comment|
   username = comment[:user][:login]
