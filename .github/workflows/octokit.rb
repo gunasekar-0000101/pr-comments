@@ -7,8 +7,12 @@ client = Octokit::Client.new :access_token => ENV['MY_PERSONAL_TOKEN']
 #lookingfor = "2022-12-22 build now"
 lookingfor = "build now"
 utctime = Time.now.utc
-prnum = puts File.read('pull_number.log')
-puts #{prnum}
+#prnum = puts File.read('pull_number.log')
+fileopen = open 'pull_number.log'
+#puts #{prnum}
+prnum = fileopen.read
+prnum.close
+puts prnum
 client.issue_comments("gunasekar-0000101/pr-comments", 2).each do |comment|
   username = comment[:user][:login]
   post_date = comment[:created_at]
