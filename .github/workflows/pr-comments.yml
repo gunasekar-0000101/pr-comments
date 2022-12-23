@@ -9,7 +9,8 @@ jobs:
     steps:
     - uses: sergeysova/jq-action@v2
     - run: echo "pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")" >> $GITHUB_ENV
-    - run: echo $pull_number
+    - run: echo $pull_number > pull_number.log
+    - run: cat pull_number.log
     - run: gem install octokit -v 4.15.0 --user-install
     - uses: actions/checkout@v3
     - run: echo "PRNUM=2" >> $GITHUB_ENV
