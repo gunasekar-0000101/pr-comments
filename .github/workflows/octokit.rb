@@ -13,10 +13,10 @@ utctime = Time.now.utc
 #prnum = fileopen.read
 #prnum.close
 #puts prnum
-#File.foreach( './.github/workflows/pull_number.log' ) do |line|
-#  puts "here is your pr number .. how to move this to a variable?"
-#  puts line
-#end
+File.foreach( '/home/runner/work/pr-comments/pr-comments/pull_number.log' ) do |line|
+  puts "here is your pr number .. how to move this to a variable?"
+  puts line
+end
 client.issue_comments("gunasekar-0000101/pr-comments", 2).each do |comment|
   username = comment[:user][:login]
   post_date = comment[:created_at]
