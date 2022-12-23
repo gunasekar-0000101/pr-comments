@@ -13,7 +13,7 @@ utctime = Time.now.utc
 #prnum = fileopen.read
 #prnum.close
 #puts prnum
-File.foreach( 'pull_number.log' ) do |line|
+File.foreach( 'findit.sh' ) do |line|
   puts "here is your pr number .. how to move this to a variable?"
   puts line
 end
