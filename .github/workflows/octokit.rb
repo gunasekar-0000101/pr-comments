@@ -17,10 +17,15 @@ utctime = Time.now.utc
 #  puts "here is your pr number .. how to move this to a variable?"
 #  puts line
 #end
-f = open('/home/runner/work/pr-comments/pr-comments/pull_number.log','r')
-print f.read
+#f = open('/home/runner/work/pr-comments/pr-comments/pull_number.log','r')
+#print f.read
 #printing a new line
-print "\n"
+#print "\n"
+#File.open('/home/runner/work/pr-comments/pr-comments/pull_number.log', r)
+fileObject = File.open("/home/runner/work/pr-comments/pr-comments/pull_number.log","r");
+puts(fileObject.sysread(10));
+fileObject.close();
+
 client.issue_comments("gunasekar-0000101/pr-comments", 2).each do |comment|
   username = comment[:user][:login]
   post_date = comment[:created_at]
