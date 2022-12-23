@@ -18,5 +18,6 @@ jobs:
     - run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
     - run: echo $NOW # Gives "2022-12-11T01:42:20"
     - run: echo "do something"
+    - run: cat rubyout.log
     - run: chmod +x ./.github/workflows/findit.sh
     - run: ./.github/workflows/findit.sh
