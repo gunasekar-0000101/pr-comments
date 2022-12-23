@@ -13,12 +13,12 @@ jobs:
     - run: cat pull_number.log
     - run: gem install octokit -v 4.15.0 --user-install
     - uses: actions/checkout@v3
-    - run: echo "PRNUM=2" >> $GITHUB_ENV
+    #- run: echo "PRNUM=2" >> $GITHUB_ENV
     - run: chmod +x ./.github/workflows/octokit.rb
-    - run: ./.github/workflows/octokit.rb $PRNUM > rubyout.log
+    - run: ./.github/workflows/octokit.rb $pull_number > rubyout.log
     - run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
     - run: echo $NOW # Gives "2022-12-11T01:42:20"
-    - run: echo "do something"
+    - run: echo "do something .. "
     - run: cat rubyout.log
     - run: chmod +x ./.github/workflows/findit.sh
     - run: ./.github/workflows/findit.sh
