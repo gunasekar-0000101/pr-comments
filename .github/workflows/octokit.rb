@@ -22,7 +22,7 @@ utctime = Time.now.utc
 #printing a new line
 #print "\n"
 #File.open('/home/runner/work/pr-comments/pr-comments/pull_number.log', r)
-fileObject = File.open("/home/runner/work/pr-comments/pr-comments/pull_number.log","r");
+fileObject = File.open("pull_number.log","r");
 puts(fileObject.sysread(10));
 fileObject.close();
 
