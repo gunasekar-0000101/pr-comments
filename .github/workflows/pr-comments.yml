@@ -7,6 +7,8 @@ jobs:
     name: Read PR Comments
     runs-on: ubuntu-latest
     steps:
+    - uses: sergeysova/jq-action@v2
+    - run: pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
     - run: gem install octokit -v 4.15.0 --user-install
     - uses: actions/checkout@v3
     - run: echo "PRNUM=2" >> $GITHUB_ENV
