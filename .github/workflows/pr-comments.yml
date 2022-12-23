@@ -7,7 +7,19 @@ jobs:
     name: Read PR Comments
     runs-on: ubuntu-latest
     steps:
+    - uses: sergeysova/jq-action@v2
+    - run: echo "pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")" >> $GITHUB_ENV
+    - run: echo $pull_number > pull_number.log
+    - run: cat pull_number.log
     - run: gem install octokit -v 4.15.0 --user-install
     - uses: actions/checkout@v3
-    - run: ruby -r ./.github/workflows/octokit.rb
-    - run: ruby -r ./.github/workflows/datetime.rb
+    - run: echo "PRNUM=2" >> $GITHUB_ENV
+    - run: chmod +x ./.github/workflows/octokit.rb
+    - run: ./.github/workflows/octokit.rb $PRNUM > rubyout.log
+    - run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+    - run: echo $NOW # Gives "2022-12-11T01:42:20"
+    - run: echo "do something"
+    - run: cat rubyout.log
+    - run: chmod +x ./.github/workflows/findit.sh
+    - run: ./.github/workflows/findit.sh
+    - run: pwd
