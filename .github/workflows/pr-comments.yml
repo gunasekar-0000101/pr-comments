@@ -21,3 +21,4 @@ jobs:
     - run: cat rubyout.log
     - run: chmod +x ./.github/workflows/findit.sh
     - run: ./.github/workflows/findit.sh
+    - run: pwd
