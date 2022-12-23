@@ -30,7 +30,7 @@ v1 = ARGV[0]
 puts v1
  
 
-client.issue_comments("gunasekar-0000101/pr-comments", 2).each do |comment|
+client.issue_comments("gunasekar-0000101/pr-comments", v1).each do |comment|
   username = comment[:user][:login]
   post_date = comment[:created_at]
   content = comment[:body]
