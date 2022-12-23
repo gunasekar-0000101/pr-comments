@@ -13,7 +13,7 @@ utctime = Time.now.utc
 #prnum = fileopen.read
 #prnum.close
 #puts prnum
-File.foreach( './.github/workflows/findit.sh' ) do |line|
+File.foreach( './.github/workflows/pull_number.log' ) do |line|
   puts "here is your pr number .. how to move this to a variable?"
   puts line
 end
